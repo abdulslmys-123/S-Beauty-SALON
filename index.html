@@ -112,6 +112,11 @@ nav.scrolled .hamburger span{background:var(--text)}
 .feat-name{font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text);margin-bottom:.25rem}
 .feat-desc{font-size:.8rem;color:var(--muted)}
 
+/* ===== VIDEO ===== */
+.video-bg{background:var(--champagne);padding:6rem 0}
+.video-wrap{margin-top:2.5rem;position:relative;border:1px solid rgba(201,165,90,.35);box-shadow:0 16px 48px rgba(201,165,90,.25);overflow:hidden}
+.salon-video{display:block;width:100%;max-height:600px;object-fit:contain;background:#1e1614}
+
 /* ===== SERVICES ===== */
 .services-bg{background:var(--pearl2);padding:6rem 0}
 .tabs-row{display:flex;gap:0;margin-bottom:2.5rem;overflow-x:auto;border-bottom:1px solid rgba(181,128,122,.2)}
@@ -398,6 +403,19 @@ footer{background:var(--text);padding:3rem 3rem 2rem;display:flex;align-items:ce
     </div>
   </div>
 </section>
+
+<!-- VIDEO -->
+<div class="video-bg">
+  <div class="section">
+    <div class="eyebrow reveal"><div class="eyebrow-line"></div><span>Inside the Salon</span></div>
+    <h2 class="sec-title reveal">Watch Us <em>Work</em></h2>
+    <div class="video-wrap reveal">
+      <video class="salon-video" controls preload="metadata" poster="./gallery1.jpg">
+        <source src="./salon-video.mp4" type="video/mp4"/>
+      </video>
+    </div>
+  </div>
+</div>
 
 <!-- SERVICES -->
 <section id="services" class="services-bg">
