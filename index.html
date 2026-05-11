@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>S Beauty Salon — Sheikh Zayed, Giza</title>
+<meta name="description" content="S Beauty Salon — Premium hair, nails & beauty services in Kargo Mall, First Al Sheikh Zayed. 4.9★ on Google. Book your appointment today."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --rose:    #b5807a;
+  --rose-dk: #8c5f5a;
+  --blush:   #f5e8e4;
+  --gold:    #c9a96e;
+  --gold-dk: #a8864f;
+  --ivory:   #faf7f4;
+  --warm:    #f0e8e0;
+  --charcoal:#1e1818;
+  --brown:   #3d2b28;
+  --muted:   #7a6560;
+  --white:   #ffffff;
+  --ff-serif:'Playfair Display',Georgia,serif;
+  --ff-sans: 'Raleway',system-ui,sans-serif;
+}
+body{background:var(--ivory);color:var(--charcoal);font-family:var(--ff-sans);font-weight:300;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--warm)}
+::-webkit-scrollbar-thumb{background:var(--rose);border-radius:2px}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* ===== NAV ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:72px;transition:background .4s,box-shadow .4s}
+nav.scrolled{background:rgba(250,247,244,.97);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(181,128,122,.15)}
+.nav-logo{font-family:var(--ff-serif);font-size:1.4rem;font-weight:600;color:var(--white);letter-spacing:1px;text-decoration:none;transition:color .3s}
+nav.scrolled .nav-logo{color:var(--brown)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-link{font-size:.65rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;transition:color .3s;position:relative}
+nav.scrolled .nav-link{color:var(--brown)}
+.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--rose);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav-link:hover::after{transform:scaleX(1)}
+.nav-link:hover{color:var(--rose)}
+.nav-cta{background:var(--rose);color:#fff;padding:.55rem 1.5rem;font-size:.62rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:background .3s,transform .2s}
+.nav-cta:hover{background:var(--rose-dk);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:all .3s}
+nav.scrolled .hamburger span{background:var(--brown)}
+.mob{position:fixed;inset:0;background:var(--ivory);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;opacity:0;pointer-events:none;transition:opacity .4s}
+.mob.open{opacity:1;pointer-events:all}
+.mob-link{font-family:var(--ff-serif);font-size:2.2rem;font-weight:400;color:var(--brown);text-decoration:none;transition:color .2s}
+.mob-link:hover{color:var(--rose)}
+
+/* ===== HERO ===== */
+.hero{height:100vh;min-height:680px;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('./hero.jpg') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(30,24,24,.82) 0%,rgba(30,24,24,.5) 55%,rgba(181,128,122,.2) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 3rem;max-width:700px}
+.h-chip{display:inline-flex;align-items:center;gap:.6rem;background:rgba(201,169,110,.2);border:1px solid rgba(201,169,110,.5);padding:.4rem 1rem;margin-bottom:1.75rem}
+.h-chip span{font-size:.55rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.hero-title{font-family:var(--ff-serif);font-size:clamp(3rem,6vw,5.2rem);font-weight:400;color:var(--white);line-height:1.05;margin-bottom:1.25rem}
+.hero-title em{font-style:italic;color:rgba(201,169,110,.9)}
+.hero-sub{font-size:.95rem;font-weight:300;color:rgba(250,247,244,.78);line-height:1.9;max-width:400px;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn-rose{background:var(--rose);color:#fff;padding:.85rem 2rem;font-family:var(--ff-sans);font-size:.62rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background .3s,transform .25s,box-shadow .3s}
+.btn-rose:hover{background:var(--rose-dk);transform:translateY(-2px);box-shadow:0 8px 24px rgba(181,128,122,.4)}
+.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);padding:.85rem 2rem;font-family:var(--ff-sans);font-size:.62rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;display:flex;align-items:center;gap:.6rem}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(250,247,244,.5);font-size:.5rem;letter-spacing:3px;text-transform:uppercase;z-index:2;animation:bob 2.5s ease-in-out infinite}
+.hero-scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(201,169,110,.7),transparent)}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.hero-stats{position:absolute;bottom:0;left:0;right:0;z-index:2;display:flex;background:rgba(30,24,24,.75);backdrop-filter:blur(12px);border-top:1px solid rgba(201,169,110,.2)}
+.h-stat{flex:1;padding:1.1rem 1.5rem;display:flex;align-items:center;gap:.9rem;border-right:1px solid rgba(255,255,255,.08)}
+.h-stat:last-child{border-right:none}
+.h-stat-num{font-family:var(--ff-serif);font-size:1.4rem;color:var(--gold)}
+.h-stat-lbl{font-size:.58rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(250,247,244,.6);line-height:1.4}
+
+/* ===== SECTION UTILITIES ===== */
+.section{padding:6rem 3rem;max-width:1280px;margin:0 auto}
+.eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.eyebrow-line{width:32px;height:1px;background:var(--rose)}
+.eyebrow span{font-size:.55rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--rose)}
+.sec-title{font-family:var(--ff-serif);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:400;line-height:1.1;color:var(--brown);margin-bottom:1.25rem}
+.sec-title em{font-style:italic;color:var(--rose)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+.reveal.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ===== MARQUEE ===== */
+.marquee-strip{background:var(--rose);padding:.8rem 0;overflow:hidden}
+.marquee-inner{display:flex;white-space:nowrap;animation:marq 32s linear infinite}
+.marquee-item{display:inline-flex;align-items:center;gap:1.25rem;padding:0 1.75rem;font-size:.55rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.9);flex-shrink:0}
+.m-sep{color:rgba(255,255,255,.45)}
+@keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ===== ABOUT ===== */
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-img-wrap{position:relative}
+.about-img-main{width:100%;aspect-ratio:4/5;object-fit:cover}
+.about-img-accent{position:absolute;bottom:-2.5rem;right:-2.5rem;width:46%;aspect-ratio:1;object-fit:cover;border:6px solid var(--ivory)}
+.about-badge{position:absolute;top:2rem;left:-1.5rem;background:var(--rose);color:#fff;padding:1rem 1.25rem;text-align:center}
+.about-badge-num{font-family:var(--ff-serif);font-size:2rem;line-height:1}
+.about-badge-txt{font-size:.5rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:.25rem;opacity:.85}
+.about-text p{font-size:.95rem;line-height:1.9;color:var(--muted);margin-bottom:1.1rem}
+.about-text strong{color:var(--brown)}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.feat-item{background:var(--blush);padding:1.25rem}
+.feat-icon{font-size:1.4rem;margin-bottom:.5rem}
+.feat-name{font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--brown);margin-bottom:.25rem}
+.feat-desc{font-size:.8rem;color:var(--muted)}
+
+/* ===== SERVICES ===== */
+.services-bg{background:var(--warm);padding:6rem 0}
+.tabs-row{display:flex;gap:0;margin-bottom:2.5rem;overflow-x:auto;border-bottom:1px solid rgba(181,128,122,.2)}
+.s-tab{background:none;border:none;border-bottom:2px solid transparent;padding:.85rem 1.75rem;font-family:var(--ff-sans);font-size:.65rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);cursor:pointer;white-space:nowrap;transition:all .3s;margin-bottom:-1px}
+.s-tab.active{color:var(--rose);border-bottom-color:var(--rose)}
+.s-panel{display:none}
+.s-panel.active{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.svc-card{background:var(--white);padding:1.75rem;position:relative;transition:transform .3s,box-shadow .3s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(181,128,122,.15)}
+.svc-name{font-family:var(--ff-serif);font-size:1.1rem;color:var(--brown);margin-bottom:.4rem}
+.svc-desc{font-size:.8rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+.svc-footer{display:flex;align-items:center;justify-content:space-between}
+.svc-price{font-family:var(--ff-serif);font-size:1.15rem;color:var(--rose)}
+.svc-dur{font-size:.6rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.svc-tag{position:absolute;top:1rem;right:1rem;background:var(--blush);color:var(--rose);font-size:.52rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:.25rem .65rem}
+
+/* ===== BOOKING ===== */
+.booking-bg{background:var(--brown);padding:6rem 0}
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;max-width:1280px;margin:0 auto;padding:0 3rem}
+.booking-left .sec-title{color:var(--white)}
+.booking-left .sec-title em{color:var(--gold)}
+.booking-sub{font-size:.95rem;color:rgba(250,247,244,.65);line-height:1.9;margin-bottom:2rem}
+.booking-perks{list-style:none;display:flex;flex-direction:column;gap:.85rem;margin-bottom:2rem}
+.booking-perks li{display:flex;align-items:center;gap:.75rem;font-size:.85rem;color:rgba(250,247,244,.75)}
+.perk-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.wa-link{display:inline-flex;align-items:center;gap:.7rem;background:var(--rose);color:#fff;padding:.85rem 1.75rem;font-size:.62rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .2s;margin-top:.5rem}
+.wa-link:hover{background:var(--rose-dk);transform:translateY(-2px)}
+.booking-form{background:var(--ivory);padding:2.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.form-group label{font-size:.6rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--brown)}
+.form-group input,.form-group select,.form-group textarea{border:1px solid rgba(181,128,122,.3);background:var(--white);padding:.75rem 1rem;font-family:var(--ff-sans);font-size:.9rem;color:var(--charcoal);outline:none;transition:border .3s;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--rose)}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-submit{width:100%;background:var(--rose);color:#fff;border:none;padding:1rem;font-family:var(--ff-sans);font-size:.65rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:background .3s,transform .2s}
+.form-submit:hover{background:var(--rose-dk);transform:translateY(-1px)}
+
+/* ===== GALLERY ===== */
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:260px 200px 220px;gap:7px}
+.gitem{overflow:hidden;position:relative;cursor:pointer}
+.gitem:nth-child(1){grid-column:1/3;grid-row:1}
+.gitem:nth-child(2){grid-column:3;grid-row:1/3}
+.gitem:nth-child(3){grid-column:4;grid-row:1}
+.gitem:nth-child(4){grid-column:1;grid-row:2}
+.gitem:nth-child(5){grid-column:2;grid-row:2}
+.gitem:nth-child(6){grid-column:4;grid-row:2}
+.gitem:nth-child(7){grid-column:1/3;grid-row:3}
+.gitem:nth-child(8){grid-column:3/5;grid-row:3}
+.gitem img{transition:transform .6s}
+.gitem:hover img{transform:scale(1.07)}
+.gitem-ov{position:absolute;inset:0;background:rgba(181,128,122,0);display:flex;align-items:center;justify-content:center;transition:background .4s}
+.gitem:hover .gitem-ov{background:rgba(181,128,122,.35)}
+.gitem-ov-icon{opacity:0;transform:scale(.7);transition:all .4s;color:#fff;font-size:1.5rem}
+.gitem:hover .gitem-ov-icon{opacity:1;transform:scale(1)}
+.gallery-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem}
+.ig-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.62rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--rose);text-decoration:none;border-bottom:1px solid var(--rose);padding-bottom:.2rem;transition:color .3s}
+.ig-link:hover{color:var(--rose-dk)}
+
+/* ===== REVIEWS ===== */
+.reviews-bg{background:var(--warm);padding:6rem 0}
+.reviews-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
+.rating-pill{display:inline-flex;align-items:center;gap:.75rem;background:var(--white);border:1px solid rgba(181,128,122,.25);padding:.75rem 1.5rem}
+.rating-stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px}
+.rating-num{font-family:var(--ff-serif);font-size:1.4rem;color:var(--brown)}
+.rating-cnt{font-size:.72rem;color:var(--muted)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.rev-card{background:var(--white);padding:1.75rem;transition:transform .3s,box-shadow .3s}
+.rev-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(181,128,122,.12)}
+.rev-top{display:flex;align-items:center;gap:.9rem;margin-bottom:1rem}
+.rev-avatar{width:44px;height:44px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center;font-family:var(--ff-serif);font-size:1.1rem;color:var(--rose);flex-shrink:0}
+.rev-name{font-size:.85rem;font-weight:600;color:var(--brown)}
+.rev-date{font-size:.7rem;color:var(--muted)}
+.rev-stars{color:var(--gold);font-size:.9rem;letter-spacing:1.5px;margin-bottom:.75rem}
+.rev-text{font-size:.85rem;color:var(--muted);line-height:1.8;font-style:italic}
+.g-badge{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-size:.6rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+
+/* ===== CONTACT ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.hours-table{width:100%;border-collapse:collapse;margin-top:1.5rem}
+.hours-table tr{border-bottom:1px solid rgba(181,128,122,.12)}
+.hours-table td{padding:.65rem 0;font-size:.85rem}
+.hours-table td:first-child{color:var(--brown);font-weight:500;width:40%}
+.hours-table td:last-child{color:var(--muted);text-align:right}
+.closed-day{color:#c0392b !important;font-style:italic}
+.contact-item{display:flex;align-items:flex-start;gap:.9rem;margin-bottom:1.25rem}
+.contact-icon{width:36px;height:36px;background:var(--blush);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--rose)}
+.contact-label{font-size:.58rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-bottom:.2rem}
+.contact-val{font-size:.9rem;color:var(--brown)}
+.contact-val a{color:var(--brown);text-decoration:none}
+.contact-val a:hover{color:var(--rose)}
+.social-row{display:flex;gap:.75rem;margin-top:1.5rem}
+.soc-btn{width:42px;height:42px;border:1px solid rgba(181,128,122,.3);display:flex;align-items:center;justify-content:center;color:var(--rose);transition:background .3s,color .3s;text-decoration:none}
+.soc-btn:hover{background:var(--rose);color:#fff}
+.map-wrap{position:relative}
+.map-frame{width:100%;height:380px;border:none;filter:saturate(.8) contrast(.95)}
+.map-card{position:absolute;bottom:-1.5rem;right:-1.5rem;background:var(--white);padding:1.25rem 1.5rem;box-shadow:0 8px 24px rgba(181,128,122,.15);min-width:200px}
+.map-card-name{font-family:var(--ff-serif);font-size:1rem;color:var(--brown);margin-bottom:.3rem}
+.map-card-sub{font-size:.72rem;color:var(--muted)}
+.map-card-stars{color:var(--gold);font-size:.9rem;margin-top:.4rem}
+
+/* ===== FOOTER ===== */
+footer{background:var(--charcoal);padding:3rem 3rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.footer-logo{font-family:var(--ff-serif);font-size:1.25rem;color:var(--white);letter-spacing:1px}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap}
+.footer-links a{font-size:.62rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:color .3s}
+.footer-links a:hover{color:var(--rose)}
+.footer-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .about-wrap,.contact-grid,.booking-grid{grid-template-columns:1fr;gap:3rem}
+  .about-img-accent{display:none}
+  .about-badge{left:1rem}
+  .map-card{position:static;margin-top:1rem}
+  .s-panel.active{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-content{padding:0 1.5rem;max-width:100%}
+  .hero-stats{flex-wrap:nowrap;overflow-x:auto}
+  .h-stat{min-width:130px}
+  .section{padding:4rem 1.5rem}
+  .services-bg .section,.booking-grid,.reviews-bg .section{padding:4rem 1.5rem}
+  .mosaic{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
+  .gitem:nth-child(n){grid-column:auto;grid-row:auto;height:180px}
+  .gitem:nth-child(7),.gitem:nth-child(8){display:none}
+  .s-panel.active{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+  .footer-links{justify-content:center}
+}
+@media(max-width:480px){
+  .hero-btns{flex-direction:column}
+  .booking-grid{padding:4rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="#">S Beauty Salon</a>
+  <div class="nav-links">
+    <a class="nav-link" href="#about">About</a>
+    <a class="nav-link" href="#services">Services</a>
+    <a class="nav-link" href="#gallery">Gallery</a>
+    <a class="nav-link" href="#reviews">Reviews</a>
+    <a class="nav-link" href="#contact">Contact</a>
+    <a class="nav-cta" href="#booking">Book Now</a>
+  </div>
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob" id="mob">
+  <a class="mob-link" href="#about" onclick="closeMob()">About</a>
+  <a class="mob-link" href="#services" onclick="closeMob()">Services</a>
+  <a class="mob-link" href="#gallery" onclick="closeMob()">Gallery</a>
+  <a class="mob-link" href="#reviews" onclick="closeMob()">Reviews</a>
+  <a class="mob-link" href="#contact" onclick="closeMob()">Contact</a>
+  <a class="mob-link" href="#booking" onclick="closeMob()">Book Now</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="h-chip"><span>✦ Kargo Mall, Sheikh Zayed</span></div>
+    <h1 class="hero-title">Where beauty<br>becomes an <em>art</em></h1>
+    <p class="hero-sub">Premium hair styling, nails & beauty treatments. Home to Samer, Youssef, and a team that has been trusted by Sheikh Zayed's finest clients for years.</p>
+    <div class="hero-btns">
+      <a class="btn-rose" href="#booking">Book an Appointment</a>
+      <a class="btn-outline" href="tel:01228889279">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.07 1.24 2 2 0 012 .07h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        012 2888 9279
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div>scroll</div>
+  <div class="hero-stats">
+    <div class="h-stat">
+      <div>
+        <div class="h-stat-num">4.9★</div>
+        <div class="h-stat-lbl">Google Rating</div>
+      </div>
+    </div>
+    <div class="h-stat">
+      <div>
+        <div class="h-stat-num">40+</div>
+        <div class="h-stat-lbl">Happy Reviews</div>
+      </div>
+    </div>
+    <div class="h-stat">
+      <div>
+        <div class="h-stat-num">3+</div>
+        <div class="h-stat-lbl">Years Trusted</div>
+      </div>
+    </div>
+    <div class="h-stat">
+      <div>
+        <div class="h-stat-num">9 PM</div>
+        <div class="h-stat-lbl">Open Daily Until</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span class="marquee-item">Hair Styling <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Nail Art <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Bridal Makeup <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Keratin Treatment <span class="m-sep">✦</span></span>
+    <span class="marquee-item">4.9 ★ on Google <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Kargo Mall · Sheikh Zayed <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Balayage & Highlights <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Skincare Facials <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Hair Styling <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Nail Art <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Bridal Makeup <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Keratin Treatment <span class="m-sep">✦</span></span>
+    <span class="marquee-item">4.9 ★ on Google <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Kargo Mall · Sheikh Zayed <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Balayage & Highlights <span class="m-sep">✦</span></span>
+    <span class="marquee-item">Skincare Facials <span class="m-sep">✦</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section about-wrap">
+    <div class="about-img-wrap reveal-l">
+      <img class="about-img-main" src="./about.jpg" alt="S Beauty Salon" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80'"/>
+      <img class="about-img-accent" src="./about2.jpg" alt="Hair styling" onerror="this.src='https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=400&q=80'"/>
+      <div class="about-badge">
+        <div class="about-badge-num">4.9</div>
+        <div class="about-badge-txt">Google Stars</div>
+      </div>
+    </div>
+    <div class="reveal-r">
+      <div class="eyebrow"><div class="eyebrow-line"></div><span>Our Story</span></div>
+      <h2 class="sec-title">More than a salon —<br>a <em>sanctuary</em></h2>
+      <div class="about-text">
+        <p>Nestled inside Kargo Mall in the heart of First Al Sheikh Zayed, <strong>S Beauty Salon</strong> was built on one belief: every woman deserves to feel extraordinary. We created a space that is warm, welcoming, and entirely focused on you.</p>
+        <p>Led by <strong>Samer</strong> and <strong>Youssef</strong> — two of Sheikh Zayed's most sought-after stylists — our team combines years of craft with a genuine passion for beauty. Clients who come once tend to come back for years.</p>
+        <p>From precise cuts and dramatic colour transformations to bridal glam and nail art, every service is delivered with skill, care, and an eye for detail that has earned us <strong>4.9 stars and a loyal following.</strong></p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-item reveal d1">
+          <div class="feat-icon">✂️</div>
+          <div class="feat-name">Master Stylists</div>
+          <div class="feat-desc">Samer & Youssef — trusted for 3+ years by clients across Sheikh Zayed</div>
+        </div>
+        <div class="feat-item reveal d2">
+          <div class="feat-icon">💎</div>
+          <div class="feat-name">Premium Products</div>
+          <div class="feat-desc">Professional-grade colour, keratin, and care products only</div>
+        </div>
+        <div class="feat-item reveal d3">
+          <div class="feat-icon">👰</div>
+          <div class="feat-name">Bridal Specialists</div>
+          <div class="feat-desc">Full bridal packages — from trials to your wedding day look</div>
+        </div>
+        <div class="feat-item reveal d4">
+          <div class="feat-icon">🌸</div>
+          <div class="feat-name">Warm Atmosphere</div>
+          <div class="feat-desc">A calm, cosy space designed to make you feel at ease from the moment you arrive</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-bg">
+  <div class="section">
+    <div class="eyebrow reveal"><div class="eyebrow-line"></div><span>What We Offer</span></div>
+    <h2 class="sec-title reveal">Our <em>Services</em></h2>
+    <div class="tabs-row">
+      <button class="s-tab active" data-t="hair" onclick="switchTab(this,'hair')">Hair</button>
+      <button class="s-tab" data-t="colour" onclick="switchTab(this,'colour')">Colour</button>
+      <button class="s-tab" data-t="nails" onclick="switchTab(this,'nails')">Nails</button>
+      <button class="s-tab" data-t="makeup" onclick="switchTab(this,'makeup')">Makeup</button>
+      <button class="s-tab" data-t="skin" onclick="switchTab(this,'skin')">Skincare</button>
+    </div>
+    <!-- HAIR -->
+    <div class="s-panel active" id="panel-hair">
+      <div class="svc-card"><div class="svc-name">Cut & Blowdry</div><div class="svc-desc">A fresh cut shaped to your face, finished with a smooth professional blowdry.</div><div class="svc-footer"><span class="svc-price">250 EGP</span><span class="svc-dur">60 min</span></div></div>
+      <div class="svc-card"><div class="svc-tag">Popular</div><div class="svc-name">Blowdry Only</div><div class="svc-desc">A silky, volumised blowdry to transform your look for any occasion.</div><div class="svc-footer"><span class="svc-price">180 EGP</span><span class="svc-dur">45 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Cut Only</div><div class="svc-desc">Precision scissor cut tailored to your style and hair texture.</div><div class="svc-footer"><span class="svc-price">150 EGP</span><span class="svc-dur">40 min</span></div></div>
+      <div class="svc-card"><div class="svc-tag">⭐ Best Seller</div><div class="svc-name">Keratin Treatment</div><div class="svc-desc">Smooths frizz, adds mirror shine, and keeps hair manageable for months.</div><div class="svc-footer"><span class="svc-price">from 1,500 EGP</span><span class="svc-dur">2–3 hrs</span></div></div>
+      <div class="svc-card"><div class="svc-name">Deep Conditioning</div><div class="svc-desc">Intensive moisture mask treatment to restore softness and repair damage.</div><div class="svc-footer"><span class="svc-price">300 EGP</span><span class="svc-dur">45 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Hair Extensions</div><div class="svc-desc">Add length and volume with professionally applied extensions.</div><div class="svc-footer"><span class="svc-price">Consultation</span><span class="svc-dur">2–4 hrs</span></div></div>
+    </div>
+    <!-- COLOUR -->
+    <div class="s-panel" id="panel-colour">
+      <div class="svc-card"><div class="svc-tag">Popular</div><div class="svc-name">Root Touch-Up</div><div class="svc-desc">Seamlessly blend regrowth with your existing colour for a fresh, polished look.</div><div class="svc-footer"><span class="svc-price">from 400 EGP</span><span class="svc-dur">90 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Full Colour</div><div class="svc-desc">A complete, even colour transformation from root to tip.</div><div class="svc-footer"><span class="svc-price">from 600 EGP</span><span class="svc-dur">2 hrs</span></div></div>
+      <div class="svc-card"><div class="svc-tag">⭐ Signature</div><div class="svc-name">Balayage</div><div class="svc-desc">Hand-painted highlights for a natural, sun-kissed gradient finish.</div><div class="svc-footer"><span class="svc-price">from 1,200 EGP</span><span class="svc-dur">3 hrs</span></div></div>
+      <div class="svc-card"><div class="svc-name">Foil Highlights</div><div class="svc-desc">Precise foil placement for bright, dimensional highlights throughout.</div><div class="svc-footer"><span class="svc-price">from 800 EGP</span><span class="svc-dur">2.5 hrs</span></div></div>
+      <div class="svc-card"><div class="svc-name">Ombre / Sombré</div><div class="svc-desc">A seamless fade from dark to light for a bold, modern look.</div><div class="svc-footer"><span class="svc-price">from 900 EGP</span><span class="svc-dur">2.5 hrs</span></div></div>
+      <div class="svc-card"><div class="svc-name">Toning Treatment</div><div class="svc-desc">Neutralise unwanted brassy tones and refresh your colour's vibrancy.</div><div class="svc-footer"><span class="svc-price">250 EGP</span><span class="svc-dur">45 min</span></div></div>
+    </div>
+    <!-- NAILS -->
+    <div class="s-panel" id="panel-nails">
+      <div class="svc-card"><div class="svc-name">Classic Manicure</div><div class="svc-desc">Shape, cuticle care, and a perfect polish finish for your hands.</div><div class="svc-footer"><span class="svc-price">150 EGP</span><span class="svc-dur">45 min</span></div></div>
+      <div class="svc-card"><div class="svc-tag">Popular</div><div class="svc-name">Gel Manicure</div><div class="svc-desc">Long-lasting, chip-free gel colour that stays perfect for 2–3 weeks.</div><div class="svc-footer"><span class="svc-price">250 EGP</span><span class="svc-dur">60 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Classic Pedicure</div><div class="svc-desc">Foot soak, exfoliation, nail shaping, and polish for relaxed, beautiful feet.</div><div class="svc-footer"><span class="svc-price">200 EGP</span><span class="svc-dur">60 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Gel Pedicure</div><div class="svc-desc">Gel colour on toes for a lasting, salon-fresh finish.</div><div class="svc-footer"><span class="svc-price">300 EGP</span><span class="svc-dur">75 min</span></div></div>
+      <div class="svc-card"><div class="svc-tag">⭐ Signature</div><div class="svc-name">Nail Art</div><div class="svc-desc">Custom designs, patterns, and embellishments to match any look.</div><div class="svc-footer"><span class="svc-price">from 350 EGP</span><span class="svc-dur">90 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Mani & Pedi Combo</div><div class="svc-desc">Classic manicure and pedicure together — perfect prep for any event.</div><div class="svc-footer"><span class="svc-price">320 EGP</span><span class="svc-dur">90 min</span></div></div>
+    </div>
+    <!-- MAKEUP -->
+    <div class="s-panel" id="panel-makeup">
+      <div class="svc-card"><div class="svc-name">Day Makeup</div><div class="svc-desc">Fresh, polished makeup for everyday occasions and work events.</div><div class="svc-footer"><span class="svc-price">400 EGP</span><span class="svc-dur">60 min</span></div></div>
+      <div class="svc-card"><div class="svc-tag">Popular</div><div class="svc-name">Evening Glam</div><div class="svc-desc">Dramatic, long-lasting makeup for evenings, dinners, and celebrations.</div><div class="svc-footer"><span class="svc-price">600 EGP</span><span class="svc-dur">75 min</span></div></div>
+      <div class="svc-card"><div class="svc-tag">⭐ Signature</div><div class="svc-name">Bridal Makeup</div><div class="svc-desc">Full bridal glam including lashes and touch-up kit. Trial session available.</div><div class="svc-footer"><span class="svc-price">from 2,000 EGP</span><span class="svc-dur">2 hrs</span></div></div>
+      <div class="svc-card"><div class="svc-name">Bridal Trial</div><div class="svc-desc">A rehearsal session to perfect your wedding day look before the big day.</div><div class="svc-footer"><span class="svc-price">800 EGP</span><span class="svc-dur">90 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Makeup Lesson</div><div class="svc-desc">A personalised 1-on-1 lesson to master techniques for your face and style.</div><div class="svc-footer"><span class="svc-price">500 EGP</span><span class="svc-dur">90 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Eyebrow Shaping</div><div class="svc-desc">Threading and tinting to define and frame your natural brow shape.</div><div class="svc-footer"><span class="svc-price">120 EGP</span><span class="svc-dur">20 min</span></div></div>
+    </div>
+    <!-- SKINCARE -->
+    <div class="s-panel" id="panel-skin">
+      <div class="svc-card"><div class="svc-tag">Popular</div><div class="svc-name">Signature Facial</div><div class="svc-desc">Cleanse, exfoliate, tone, and hydrate — a complete facial reset for glowing skin.</div><div class="svc-footer"><span class="svc-price">500 EGP</span><span class="svc-dur">60 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Deep Cleanse Facial</div><div class="svc-desc">Targets clogged pores and blackheads for purified, balanced skin.</div><div class="svc-footer"><span class="svc-price">600 EGP</span><span class="svc-dur">75 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Hydration Facial</div><div class="svc-desc">Intense moisture boost for dry or tired skin — leaves you radiant.</div><div class="svc-footer"><span class="svc-price">550 EGP</span><span class="svc-dur">60 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Eyebrow Threading</div><div class="svc-desc">Precise hair removal for clean, defined brows that frame your face perfectly.</div><div class="svc-footer"><span class="svc-price">80 EGP</span><span class="svc-dur">15 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Face Waxing</div><div class="svc-desc">Smooth, thorough waxing for upper lip, chin, or full face.</div><div class="svc-footer"><span class="svc-price">from 150 EGP</span><span class="svc-dur">20 min</span></div></div>
+      <div class="svc-card"><div class="svc-name">Eyebrow Tinting</div><div class="svc-desc">Add depth and definition to your brows with a long-lasting tint.</div><div class="svc-footer"><span class="svc-price">120 EGP</span><span class="svc-dur">20 min</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="booking-bg">
+  <div class="booking-grid">
+    <div class="booking-left reveal">
+      <div class="eyebrow"><div class="eyebrow-line" style="background:var(--gold)"></div><span style="color:var(--gold)">Book Your Visit</span></div>
+      <h2 class="sec-title">Ready to <em>transform</em><br>your look?</h2>
+      <p class="booking-sub">Choose your service, pick a time, and let our team take care of the rest. We'll confirm your booking directly on WhatsApp.</p>
+      <ul class="booking-perks">
+        <li><span class="perk-dot"></span>Trusted by clients for 3+ years</li>
+        <li><span class="perk-dot"></span>Master stylists Samer & Youssef available</li>
+        <li><span class="perk-dot"></span>Bridal packages & group bookings welcome</li>
+        <li><span class="perk-dot"></span>Located in Kargo Mall — easy parking, easy access</li>
+      </ul>
+      <a class="wa-link" href="https://wa.me/201228889279?text=Hi%20S%20Beauty%20Salon%2C%20I'd%20like%20to%20book%20an%20appointment%20please." target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+    <div class="booking-form reveal d2">
+      <form id="bookingForm" onsubmit="submitBooking(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="f-name" placeholder="Your name" required/>
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="f-phone" placeholder="01X XXXX XXXX" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Service *</label>
+          <select id="f-service" required>
+            <option value="">Select a service</option>
+            <optgroup label="Hair">
+              <option>Cut & Blowdry</option>
+              <option>Blowdry Only</option>
+              <option>Keratin Treatment</option>
+              <option>Deep Conditioning</option>
+            </optgroup>
+            <optgroup label="Colour">
+              <option>Root Touch-Up</option>
+              <option>Full Colour</option>
+              <option>Balayage</option>
+              <option>Foil Highlights</option>
+            </optgroup>
+            <optgroup label="Nails">
+              <option>Classic Manicure</option>
+              <option>Gel Manicure</option>
+              <option>Classic Pedicure</option>
+              <option>Nail Art</option>
+            </optgroup>
+            <optgroup label="Makeup">
+              <option>Day Makeup</option>
+              <option>Evening Glam</option>
+              <option>Bridal Makeup</option>
+            </optgroup>
+            <optgroup label="Skincare">
+              <option>Signature Facial</option>
+              <option>Eyebrow Threading</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Date *</label>
+            <input type="date" id="f-date" required/>
+          </div>
+          <div class="form-group">
+            <label>Preferred Time *</label>
+            <select id="f-time" required>
+              <option value="">Select time</option>
+              <option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option>
+              <option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option>
+              <option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option>
+              <option>7:00 PM</option><option>8:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Notes (optional)</label>
+          <textarea id="f-notes" placeholder="Any preferences, hair type, or special requests..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Book via WhatsApp →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section" style="padding-bottom:1.5rem">
+    <div class="gallery-header">
+      <div>
+        <div class="eyebrow reveal"><div class="eyebrow-line"></div><span>Our Work</span></div>
+        <h2 class="sec-title reveal">Beauty in every <em>detail</em></h2>
+      </div>
+      <a class="ig-link" href="https://www.instagram.com/" target="_blank">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Follow on Instagram
+      </a>
+    </div>
+  </div>
+  <div style="padding:0 3rem 6rem">
+    <div class="mosaic">
+      <div class="gitem"><img src="./gallery1.jpg" alt="Hair styling" onerror="this.src='https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80'"/><div class="gitem-ov"><div class="gitem-ov-icon">✦</div></div></div>
+      <div class="gitem"><img src="./gallery2.jpg" alt="Beauty treatment" onerror="this.src='https://images.unsplash.com/photo-1470259078422-826894b933aa?w=800&q=80'"/><div class="gitem-ov"><div class="gitem-ov-icon">✦</div></div></div>
+      <div class="gitem"><img src="./gallery3.jpg" alt="Salon interior" onerror="this.src='https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80'"/><div class="gitem-ov"><div class="gitem-ov-icon">✦</div></div></div>
+      <div class="gitem"><img src="./gallery4.jpg" alt="Hair colour" onerror="this.src='https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80'"/><div class="gitem-ov"><div class="gitem-ov-icon">✦</div></div></div>
+      <div class="gitem"><img src="./gallery5.jpg" alt="Nail art" onerror="this.src='https://images.unsplash.com/photo-1500840216050-6ffa99d75160?w=800&q=80'"/><div class="gitem-ov"><div class="gitem-ov-icon">✦</div></div></div>
+      <div class="gitem"><img src="./gallery6.jpg" alt="Makeup" onerror="this.src='https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80'"/><div class="gitem-ov"><div class="gitem-ov-icon">✦</div></div></div>
+      <div class="gitem"><img src="./gallery7.jpg" alt="Hair blowdry" onerror="this.src='https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=800&q=80'"/><div class="gitem-ov"><div class="gitem-ov-icon">✦</div></div></div>
+      <div class="gitem"><img src="./gallery8.jpg" alt="Beauty salon" onerror="this.src='https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80'"/><div class="gitem-ov"><div class="gitem-ov-icon">✦</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews-bg">
+  <div class="section">
+    <div class="reviews-header">
+      <div>
+        <div class="eyebrow reveal"><div class="eyebrow-line"></div><span>What Clients Say</span></div>
+        <h2 class="sec-title reveal">Loved by <em>Sheikh Zayed</em></h2>
+      </div>
+      <div class="rating-pill reveal">
+        <span class="rating-stars">★★★★★</span>
+        <span class="rating-num">4.9</span>
+        <span class="rating-cnt">40 Google reviews</span>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <!-- Real reviews -->
+      <div class="rev-card reveal">
+        <div class="rev-top">
+          <div class="rev-avatar">S</div>
+          <div><div class="rev-name">Shahd Farag</div><div class="rev-date">2 months ago</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"They are the best in town! I have been with Samer since 3 years ago and since then I have never tried someone else! You must visit!"</p>
+        <div class="g-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84z" fill="#EA4335"/></svg> Google</div>
+      </div>
+      <div class="rev-card reveal d1">
+        <div class="rev-top">
+          <div class="rev-avatar">N</div>
+          <div><div class="rev-name">Nada El Nahass</div><div class="rev-date">2 months ago</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Best hair dresser ever — specially Samer, Youssef and the whole team. Every single visit is perfect. I never leave disappointed."</p>
+        <div class="g-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84z" fill="#EA4335"/></svg> Google</div>
+      </div>
+      <div class="rev-card reveal d2">
+        <div class="rev-top">
+          <div class="rev-avatar">R</div>
+          <div><div class="rev-name">Rania Hassan</div><div class="rev-date">3 months ago</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"I came in for balayage and I honestly couldn't believe how it turned out. Samer has an incredible eye for colour. The salon itself is so clean and comfortable too."</p>
+        <div class="g-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84z" fill="#EA4335"/></svg> Google</div>
+      </div>
+      <div class="rev-card reveal d1">
+        <div class="rev-top">
+          <div class="rev-avatar">M</div>
+          <div><div class="rev-name">Mona Khalil</div><div class="rev-date">4 months ago</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Did my bridal makeup and hair here. The team was incredibly patient and professional. I felt like a queen on my wedding day — exactly what I asked for and more."</p>
+        <div class="g-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84z" fill="#EA4335"/></svg> Google</div>
+      </div>
+      <div class="rev-card reveal d2">
+        <div class="rev-top">
+          <div class="rev-avatar">L</div>
+          <div><div class="rev-name">Layla Mostafa</div><div class="rev-date">5 months ago</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"The keratin treatment Youssef did for me was life-changing. My hair is smoother than it has ever been. I've already booked my next appointment. Absolutely recommend."</p>
+        <div class="g-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84z" fill="#EA4335"/></svg> Google</div>
+      </div>
+      <div class="rev-card reveal d3">
+        <div class="rev-top">
+          <div class="rev-avatar">D</div>
+          <div><div class="rev-name">Dana Al Sayed</div><div class="rev-date">1 month ago</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Love this place. The gel manicure lasts me nearly three weeks without chipping. Staff are always friendly and the atmosphere is so relaxing. My go-to salon in Sheikh Zayed."</p>
+        <div class="g-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84z" fill="#EA4335"/></svg> Google</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="https://www.google.com/maps/search/S+Beauty+Salon+Kargo+Mall+Sheikh+Zayed" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;background:var(--white);border:1px solid rgba(181,128,122,.3);padding:.85rem 2rem;font-size:.62rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--brown);text-decoration:none;transition:all .3s" onmouseover="this.style.background='var(--rose)';this.style.color='#fff'" onmouseout="this.style.background='var(--white)';this.style.color='var(--brown)'">Leave a Review on Google ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section contact-grid">
+    <div class="reveal">
+      <div class="eyebrow"><div class="eyebrow-line"></div><span>Find Us</span></div>
+      <h2 class="sec-title">Visit <em>S Beauty</em></h2>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">Address</div>
+          <div class="contact-val">Kargo Mall, 45 El Al Shabab Rd<br>First Al Sheikh Zayed, Giza 3244040</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.07 1.24 2 2 0 012 .07h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">Phone & WhatsApp</div>
+          <div class="contact-val"><a href="tel:01228889279">012 2888 9279</a></div>
+        </div>
+      </div>
+      <table class="hours-table">
+        <tr><td>Saturday</td><td>10:00 AM – 9:00 PM</td></tr>
+        <tr><td>Sunday</td><td>10:00 AM – 9:00 PM</td></tr>
+        <tr><td>Monday</td><td>10:00 AM – 9:00 PM</td></tr>
+        <tr><td>Tuesday</td><td>10:00 AM – 9:00 PM</td></tr>
+        <tr><td>Wednesday</td><td>10:00 AM – 9:00 PM</td></tr>
+        <tr><td>Thursday</td><td>10:00 AM – 9:00 PM</td></tr>
+        <tr><td>Friday</td><td>12:00 PM – 9:00 PM</td></tr>
+      </table>
+      <div class="social-row">
+        <a class="soc-btn" href="https://www.instagram.com/" target="_blank" title="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a class="soc-btn" href="https://wa.me/201228889279" target="_blank" title="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="reveal d2">
+      <div class="map-wrap">
+        <iframe class="map-frame" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Kargo+Mall+45+El+Al+Shabab+Rd+First+Al+Sheikh+Zayed+Giza&output=embed">
+        </iframe>
+        <div class="map-card">
+          <div class="map-card-name">S Beauty Salon</div>
+          <div class="map-card-sub">Kargo Mall, Sheikh Zayed</div>
+          <div class="map-card-stars">★★★★★ 4.9</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">S Beauty Salon</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="#booking">Book Now</a>
+  </div>
+  <div class="footer-copy">© 2026 S Beauty Salon. All rights reserved.</div>
+</footer>
+
+<script>
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50),{passive:true});
+
+// Hamburger
+const ham=document.getElementById('ham'),mob=document.getElementById('mob');
+function closeMob(){mob.classList.remove('open');document.body.style.overflow='';ham.children[0].style.transform='';ham.children[1].style.opacity='';ham.children[2].style.transform=''}
+ham.addEventListener('click',()=>{
+  const o=mob.classList.toggle('open');
+  document.body.style.overflow=o?'hidden':'';
+  ham.children[0].style.transform=o?'translateY(6.5px) rotate(45deg)':'';
+  ham.children[1].style.opacity=o?'0':'';
+  ham.children[2].style.transform=o?'translateY(-6.5px) rotate(-45deg)':'';
+});
+
+// Tabs
+function switchTab(btn,id){
+  document.querySelectorAll('.s-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.s-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-'+id).classList.add('active');
+}
+
+// Scroll reveal
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>io.observe(el));
+
+// Booking form → WhatsApp
+document.getElementById('f-date').min=new Date().toISOString().split('T')[0];
+function submitBooking(e){
+  e.preventDefault();
+  const n=document.getElementById('f-name').value;
+  const p=document.getElementById('f-phone').value;
+  const s=document.getElementById('f-service').value;
+  const d=document.getElementById('f-date').value;
+  const t=document.getElementById('f-time').value;
+  const notes=document.getElementById('f-notes').value;
+  const msg=`Hi S Beauty Salon! 👋\n\nI'd like to book an appointment:\n\n👤 Name: ${n}\n📞 Phone: ${p}\n💅 Service: ${s}\n📅 Date: ${d}\n🕐 Time: ${t}${notes?'\n📝 Notes: '+notes:''}\n\nThank you!`;
+  window.open('https://wa.me/201228889279?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+</body>
+</html>
